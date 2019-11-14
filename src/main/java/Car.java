@@ -41,6 +41,8 @@ public class Car implements Runnable {
             if (MainClass.winner == null) {
                 MainClass.winner = this.name;
                 System.out.println("Ура!!! Я (" + this.name + ") приехал первый!!!");
+            } else {
+                System.out.println("Черт!!! Я (" + this.name + ") опоздал!!!");
             }
             race.finishCdl.countDown();
         } catch (Exception e) {
