@@ -23,11 +23,10 @@ public class Tunnel extends Stage {
                 System.out.println(c.getName() + " начал этап: " + description + ". Прождал " + (System.currentTimeMillis() - stopwatch) + "мс. Осталось мест " + smp.availablePermits());
                 Thread.sleep(length / c.getSpeed() * 1000);
                 System.out.println(c.getName() + " закончил этап: " + description);
-                smp.release();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             } finally {
-                System.out.println(c.getName() + " закончил этап: " + description);
+                smp.release();
             }
         } catch (Exception e) {
             e.printStackTrace();
